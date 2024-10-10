@@ -1,0 +1,51 @@
+{
+  "name": "zappzerapp/laravel-db-vault",
+  "version": "0.1.0",
+  "description": "A Laravel package that stores variables with context to the database.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Robin Kopp",
+      "email": "robin@zebra-fruit.de"
+    }
+  ],
+  "require": {
+    "php": "^8.2"
+  },
+  "require-dev": {
+    "pestphp/pest": "^3.3",
+    "orchestra/testbench": "^9.5"
+  },
+  "autoload": {
+    "files": [
+      "src/Helpers/VaultHelper.php"
+    ],
+    "psr-4": {
+      "Zappzerapp\\LaravelDbVault\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Database\\Factories\\Zappzerapp\\LaravelDbVault\\Models\\": "database/factories",
+      "Tests\\Zappzerapp\\LaravelDbVault\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": [
+      "vendor/bin/pest"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Zappzerapp\\LaravelDbVault\\DbVaultServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
+}
